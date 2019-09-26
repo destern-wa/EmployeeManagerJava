@@ -18,6 +18,7 @@ public class Manager extends Employee {
     // Constructors
     public Manager(String name, int number) {
         super(name, number);
+        employees = new ArrayList<Employee>();
     }
     public Manager(String name, int number, ArrayList<Employee> employees) {
         super(name, number);
@@ -35,13 +36,13 @@ public class Manager extends Employee {
             employees.add(newEmployee);
         }
     }
-    public void removeEmployee(Employee newEmployee) {
-        employees.remove(newEmployee);
+    public void removeEmployee(Employee oldEmployee) {
+        employees.remove(oldEmployee);
     }
     
     @Override
     public String printDetails() {
-        String managerDetails = "Manager " + name + " / " + number + "/n";
+        String managerDetails = "Manager " + name + " / " + number + "\n";
         if (employees.isEmpty()) {
             return managerDetails + "(no employess)";
         }
